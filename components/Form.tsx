@@ -32,6 +32,7 @@ export function Form({ className }: { className?: string }) {
           if (response.media)
             setUploadedMedia([...response.media, ...uploadedMedia]);
         }}
+        maxSize={1000000}
         className="mb-4"
       />
       {uploadedMedia.length ? (

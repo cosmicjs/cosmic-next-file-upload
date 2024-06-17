@@ -31,6 +31,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser and upload files. Go to the media page in your Cosmic project and see the available files.
 
+## Features
+
+Uses:
+
+1. [React Dropzone](https://react-dropzone.js.org)
+2. React Server Actions (no exposed API access keys!)
+3. Next.js app directory
+
 ## Learn More
 
 To learn more about Cosmic media and other API methods, visit the [Cosmic Documentation](https://www.cosmicjs.com/docs).

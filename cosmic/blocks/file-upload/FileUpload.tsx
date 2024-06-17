@@ -18,7 +18,7 @@ export type FileType = {
 export function FileUpload({
   className,
   onComplete,
-  maxSize,
+  maxSize = 0,
 }: {
   className?: string;
   onComplete: (response: {
@@ -26,7 +26,7 @@ export function FileUpload({
     success?: boolean;
     media?: FileType[];
   }) => void;
-  maxSize: 0;
+  maxSize: number;
 }) {
   const [filesInQueue, setFilesInQueue] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
