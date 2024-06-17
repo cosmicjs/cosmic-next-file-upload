@@ -30,22 +30,27 @@ export function FileUpload({ className }: { className?: string }) {
   ));
 
   async function handleSubmit() {
-    setUploading(true);
-    setUploadError(false);
-    setUploadSuccess(false);
-    let formData = new FormData();
-    filesInQueue.map((file: any) => {
-      formData.append("files", file, file.name);
-    });
-    const uploadResponse = await uploadAllFiles(formData);
-    setUploading(false);
-    if (uploadResponse.error) {
-      setUploadError(true);
-    } else {
-      setUploadSuccess(true);
+    try {
+      setUploading(true);
+      setUploadError(false);
+      setUploadSuccess(false);
+      let formData = new FormData();
+      filesInQueue.map((file: any) => {
+        formData.append("files", file, file.name);
+      });
+      const uploadResponse = await uploadAllFiles(formData);
+      setUploading(false);
+      if (uploadResponse.error) {
+        setUploadError(true);
+      } else {
+        setUploadSuccess(true);
+      }
+      setFilesInQueue([]);
+      setTimeout(() => setUploadSuccess(false), 3000);
+    } catch (e) {
+      console.log(e);
+      alert(e);
     }
-    setFilesInQueue([]);
-    setTimeout(() => setUploadSuccess(false), 3000);
   }
   return (
     <div className={className}>
