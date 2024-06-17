@@ -22,7 +22,7 @@ export const uploadAllFiles = async (formData: FormData) => {
     const media = mediaArray.map((obj: any) => obj.media);
     return { success: true, media };
   } catch (e) {
-    console.log("Image Upload failed", e);
+    console.log("File upload failed", e);
     return { error: true };
   }
 };
