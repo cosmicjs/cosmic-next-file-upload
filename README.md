@@ -36,8 +36,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser and upload
 Uses:
 
 1. [React Dropzone](https://react-dropzone.js.org)
-2. React Server Actions (no exposed API keys!)
-3. [Cosmic CMS](https://www.cosmicjs.com)
+2. [Cosmic CMS](https://www.cosmicjs.com)
+3. React Server Actions (no exposed API keys!)
 4. Next.js app directory
 
 ## Learn More
