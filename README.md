@@ -1,6 +1,6 @@
 # Cosmic Next Upload File
 
-Example of uploading files to Cosmic using Next.js and React Server Actions.
+Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using Next.js and React Server Actions.
 
 ## Getting Started
 
