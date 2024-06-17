@@ -4,6 +4,8 @@
 
 Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using the [React Dropzone](https://react-dropzone.js.org), [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), Next.js, and React Server Actions.
 
+[[View Demo](https://cosmic-next-file-upload.vercel.app/)]
+
 ## Getting Started
 
 First, clone this repo.
