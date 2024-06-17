@@ -1,8 +1,9 @@
-import { FileUpload } from "@/cosmic/blocks/file-upload/FileUpload";
+import { Form } from "@/components/Form";
+
 export default async function HomePage() {
   return (
     <>
-      <FileUpload className="m-4" />
+      <Form />
     </>
   );
 }

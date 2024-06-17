@@ -6,7 +6,13 @@ import { uploadAllFiles } from "@/cosmic/blocks/file-upload/actions";
 import { Button } from "@/cosmic/elements/Button";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
 
-export function FileUpload({ className }: { className?: string }) {
+export function FileUpload({
+  className,
+  onComplete,
+}: {
+  className?: string;
+  onComplete: (response: any) => void;
+}) {
   const onDrop = useCallback((acceptedFiles: any) => {
     setFilesInQueue(acceptedFiles);
   }, []);
@@ -39,6 +45,7 @@ export function FileUpload({ className }: { className?: string }) {
     });
     try {
       const uploadResponse = await uploadAllFiles(formData);
+      onComplete(uploadResponse);
       setUploading(false);
       if (uploadResponse.error) {
         setUploadError(true);
