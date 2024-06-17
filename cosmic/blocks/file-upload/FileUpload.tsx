@@ -63,7 +63,7 @@ export function FileUpload({ className }: { className?: string }) {
       {!uploadSuccess && files.length ? (
         <>
           <h4 className="mb-4">Ready to upload</h4>
-          <ul className="flex gap-4">{files}</ul>
+          <ul className="flex gap-4 flex-wrap">{files}</ul>
           <Button onClick={handleSubmit} type="submit" disabled={uploading}>
             {uploading ? (
               <>
