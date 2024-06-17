@@ -1,9 +1,11 @@
 import { Form } from "@/components/Form";
+import { Footer } from "@/components/Footer";
 
 export default async function HomePage() {
   return (
     <>
-      <Form />
+      <Form className="m-4" />
+      <Footer />
     </>
   );
 }

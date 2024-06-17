@@ -77,7 +77,7 @@ export function FileUpload({
     <div className={className}>
       <div
         {...getRootProps()}
-        className="border border-dashed text-center p-20 rounded-xl mb-4 cursor-pointer"
+        className="border-2 border-dashed text-center p-20 rounded-xl mb-4 cursor-pointer"
       >
         <input {...getInputProps()} />
         {isDragActive ? (

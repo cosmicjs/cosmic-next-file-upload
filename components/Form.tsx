@@ -22,10 +22,10 @@ function mediaList(file: FileType) {
   );
 }
 
-export function Form() {
+export function Form({ className }: { className?: string }) {
   const [uploadedMedia, setUploadedMedia] = useState<FileType[]>([]);
   return (
-    <div className="m-4">
+    <div className={className}>
       <FileUpload
         onComplete={(response) => {
           // Do something with the response here
