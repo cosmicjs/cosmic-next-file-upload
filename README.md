@@ -1,4 +1,4 @@
-# Cosmic Next Upload File
+# Cosmic Next File Upload
 
 Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using Next.js and React Server Actions.
 
@@ -7,8 +7,8 @@ Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using Next.js 
 First, clone this repo.
 
 ```bash
-git clone https://github.com/cosmicjs/cosmic-next-upload-file
-cd cosmic-next-upload-file
+git clone https://github.com/cosmicjs/cosmic-next-file-upload
+cd cosmic-next-file-upload
 ```
 
 Then go to [Your Project > API keys](https://app.cosmicjs.com/login) and add them to a new file `.env.local`
