@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { FileUpload } from "@/cosmic/blocks/file-upload/FileUpload";
+import { FileUpload, FileType } from "@/cosmic/blocks/file-upload/FileUpload";
 import { useState } from "react";
 
-function mediaList(file: any) {
+function mediaList(file: FileType) {
   return (
     <li key={file.id} className="mb-4">
       <a href={file.url} target="_blank">
@@ -23,7 +23,7 @@ function mediaList(file: any) {
 }
 
 export function Form() {
-  const [uploadedMedia, setUploadedMedia] = useState<any>([]);
+  const [uploadedMedia, setUploadedMedia] = useState<FileType[]>([]);
   return (
     <div className="m-4">
       <FileUpload
@@ -38,7 +38,7 @@ export function Form() {
         <>
           <h4 className="mb-4">Files uploaded</h4>
           <ul className="flex gap-4 flex-wrap">
-            {uploadedMedia.map((file: any) => {
+            {uploadedMedia.map((file: FileType) => {
               return mediaList(file);
             })}
           </ul>

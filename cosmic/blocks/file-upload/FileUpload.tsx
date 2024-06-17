@@ -7,24 +7,36 @@ import { uploadAllFiles } from "@/cosmic/blocks/file-upload/actions";
 import { Button } from "@/cosmic/elements/Button";
 import { CheckCircle, Loader2, XCircle } from "lucide-react";
 
+export type FileType = {
+  id: string;
+  url: string;
+  type: string;
+  imgix_url: string;
+  name: string;
+};
+
 export function FileUpload({
   className,
   onComplete,
 }: {
   className?: string;
-  onComplete: (response: any) => void;
+  onComplete: (response: {
+    error?: boolean;
+    success?: boolean;
+    media?: FileType[];
+  }) => void;
 }) {
-  const onDrop = useCallback((acceptedFiles: any) => {
+  const onDrop = useCallback((acceptedFiles: File[]) => {
     setFilesInQueue(acceptedFiles);
   }, []);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
-  const [filesInQueue, setFilesInQueue] = useState([]);
+  const [filesInQueue, setFilesInQueue] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [uploadError, setUploadError] = useState(false);
 
-  const files = filesInQueue.map((file: any) => (
-    <li key={file.path} className="mb-4">
+  const files = filesInQueue.map((file: File) => (
+    <li key={file.name} className="mb-4">
       {file.type.indexOf("image") !== -1 ? (
         <img
           className="w-60 h-44 object-cover bg-cover rounded-xl"
@@ -42,7 +54,7 @@ export function FileUpload({
     setUploadError(false);
     setUploadSuccess(false);
     let formData = new FormData();
-    filesInQueue.map((file: any) => {
+    filesInQueue.map((file: File) => {
       formData.append("files", file, file.name);
     });
     try {
