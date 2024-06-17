@@ -1,3 +1,5 @@
+# Cosmic Next Upload File
+
 Example of uploading files to Cosmic using Next.js and React Server Actions.
 
 ## Getting Started
@@ -25,7 +27,7 @@ bun i
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser and upload files. Go to the media page in your Cosmic project and see the available files.
 
 ## Learn More
 
