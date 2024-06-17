@@ -34,7 +34,7 @@ export function Form() {
         <>
           <h4 className="mb-4">Files uploaded</h4>
           <ul className="flex gap-4 flex-wrap">
-            {uploadedMedia.map((file) => {
+            {uploadedMedia.map((file: any) => {
               return mediaList(file);
             })}
           </ul>
