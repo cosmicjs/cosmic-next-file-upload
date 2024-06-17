@@ -18,6 +18,7 @@ export type FileType = {
 export function FileUpload({
   className,
   onComplete,
+  maxSize,
 }: {
   className?: string;
   onComplete: (response: {
@@ -25,15 +26,23 @@ export function FileUpload({
     success?: boolean;
     media?: FileType[];
   }) => void;
+  maxSize: 0;
 }) {
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    setFilesInQueue(acceptedFiles);
-  }, []);
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
   const [filesInQueue, setFilesInQueue] = useState<File[]>([]);
   const [uploading, setUploading] = useState(false);
   const [uploadSuccess, setUploadSuccess] = useState(false);
   const [uploadError, setUploadError] = useState(false);
+
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      setFilesInQueue([...acceptedFiles, ...filesInQueue]);
+    },
+    [filesInQueue]
+  );
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    maxSize: maxSize,
+  });
 
   const files = filesInQueue.map((file: File) => (
     <li key={file.name} className="mb-4">
@@ -83,7 +92,10 @@ export function FileUpload({
         {isDragActive ? (
           <p>Drop the files here ...</p>
         ) : (
-          <p>Drag 'n' drop some files here, or click to select files</p>
+          <p>
+            Drag 'n' drop some files here, or click to select files (max size
+            1MB)
+          </p>
         )}
       </div>
       {!uploadSuccess && files.length ? (
