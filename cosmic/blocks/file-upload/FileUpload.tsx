@@ -5,7 +5,7 @@ import React, { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { uploadAllFiles } from "@/cosmic/blocks/file-upload/actions";
 import { Button } from "@/cosmic/elements/Button";
-import { CheckCircle, Loader2, XCircle } from "lucide-react";
+import { Check, Loader2, XIcon } from "lucide-react";
 
 export type FileType = {
   id: string;
@@ -118,7 +118,7 @@ export function FileUpload({
       )}
       {uploadSuccess ? (
         <div className="border flex border-green-600 dark:border-green-400 dark:text-green-400 p-4 text-green-600 rounded-xl">
-          <CheckCircle className="relative top-1 mr-4 h-4 w-4 text-green-500" />{" "}
+          <Check className="relative top-1 mr-4 h-4 w-4 text-green-500" />{" "}
           Upload success!
         </div>
       ) : (
@@ -126,15 +126,15 @@ export function FileUpload({
       )}
       {uploadError ? (
         <div className="border flex border-red-600 dark:border-red-400 dark:text-red-400 p-4 text-red-600 rounded-xl">
-          <XCircle className="relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
-          Upload error!
+          <XIcon className="relative top-1 mr-4 h-4 w-4 text-red-500" /> Upload
+          error!
         </div>
       ) : (
         ""
       )}
       {fileRejections.length ? (
         <div className="border mt-4 flex border-red-600 dark:border-red-400 dark:text-red-400 p-4 text-red-600 rounded-xl">
-          <XCircle className="relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
+          <XIcon className="relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
           <div>
             {fileRejections.map(({ file, errors }) => {
               return (
