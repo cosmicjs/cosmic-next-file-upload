@@ -1,7 +1,9 @@
 "use server";
-import { cosmic } from "@/cosmic/client";
 
-async function uploadFile(file: any) {
+import { cosmic } from "@/cosmic/client";
+import { FileType } from "@/cosmic/blocks/file-upload/FileUpload";
+
+async function uploadFile(file: File) {
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
   const media = { originalname: file.name, buffer };
@@ -9,11 +11,11 @@ async function uploadFile(file: any) {
     media,
   });
 }
-export const uploadAllFiles = async (formData: any) => {
+export const uploadAllFiles = async (formData: FormData) => {
   try {
     const files = formData.getAll("files");
     const addAllFiles = files.map((file: any) => uploadFile(file));
-    let mediaArray: any = [];
+    let mediaArray: FileType[] = [];
     await Promise.all(addAllFiles).then((value) => {
       mediaArray = value;
     });
