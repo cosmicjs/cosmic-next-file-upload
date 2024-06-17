@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import { FileUpload } from "@/cosmic/blocks/file-upload/FileUpload";
@@ -11,6 +12,7 @@ function mediaList(file: any) {
           <img
             className="w-60 h-44 object-cover bg-cover rounded-xl"
             src={`${file.imgix_url}?w=500&auto=format,compression`}
+            alt={file.name}
           />
         ) : (
           <span>{file.name}</span>

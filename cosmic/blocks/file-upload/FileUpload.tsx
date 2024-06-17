@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useCallback, useState } from "react";
@@ -28,6 +29,7 @@ export function FileUpload({
         <img
           className="w-60 h-44 object-cover bg-cover rounded-xl"
           src={`${URL.createObjectURL(file)}`}
+          alt={file.name}
         />
       ) : (
         <span>{file.name}</span>
