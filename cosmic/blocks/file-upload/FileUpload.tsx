@@ -118,7 +118,7 @@ export function FileUpload({
       )}
       {uploadSuccess ? (
         <div className="border flex border-green-600 dark:border-green-400 dark:text-green-400 p-4 text-green-600 rounded-xl">
-          <Check className="relative top-1 mr-4 h-4 w-4 text-green-500" />{" "}
+          <Check className="shrink-0 relative top-1 mr-4 h-4 w-4 text-green-500" />{" "}
           Upload success!
         </div>
       ) : (
@@ -126,15 +126,15 @@ export function FileUpload({
       )}
       {uploadError ? (
         <div className="border flex border-red-600 dark:border-red-400 dark:text-red-400 p-4 text-red-600 rounded-xl">
-          <XIcon className="relative top-1 mr-4 h-4 w-4 text-red-500" /> Upload
-          error!
+          <XIcon className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
+          Upload error!
         </div>
       ) : (
         ""
       )}
       {fileRejections.length ? (
         <div className="border mt-4 flex border-red-600 dark:border-red-400 dark:text-red-400 p-4 text-red-600 rounded-xl">
-          <XIcon className="relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
+          <XIcon className="shrink-0 relative top-1 mr-4 h-4 w-4 text-red-500" />{" "}
           <div>
             {fileRejections.map(({ file, errors }) => {
               return (
