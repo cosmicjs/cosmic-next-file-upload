@@ -2,7 +2,7 @@
 
 <a href="https://cosmic-next-file-upload.vercel.app/"><img src="https://imgix.cosmicjs.com/c39201f0-2cea-11ef-adb1-8b946b3a80e4-file-upload.png?w=1200&auto=format,compression" alt="File Upload Screenshot" /></a>
 
-Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using the [React Dropzone](https://react-dropzone.js.org), [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), Next.js, and React Server Actions (no exposed API keys). Uses the Cosmic [file upload Block](https://blocks.cosmicjs.com/blocks/file-upload).
+Example of uploading files to [Cosmic](https://www.cosmicjs.com/) using [React Dropzone](https://react-dropzone.js.org), [Cosmic JavaScript SDK](https://www.npmjs.com/package/@cosmicjs/sdk), Next.js, and React Server Actions (no exposed API keys). Uses the Cosmic [file upload Block](https://blocks.cosmicjs.com/blocks/file-upload).
 
 [[View Demo](https://cosmic-next-file-upload.vercel.app/)]
 
